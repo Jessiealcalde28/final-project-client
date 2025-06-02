@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useCallback } from 'react';
+=======
+// App.js
+import React, { useEffect, useState } from 'react';
+>>>>>>> 0620259aceb9f2594757e346ad2ec6cc5c83acac
 import MovieCard from './components/MovieCard';
 
 function App() {
@@ -38,6 +43,15 @@ function App() {
     ),
   ];
 
+<<<<<<< HEAD
+=======
+  const getMovies = async () => {
+    const res = await fetch(`${API_BASE}/movies`);
+    const data = await res.json();
+    return data;
+  };
+
+>>>>>>> 0620259aceb9f2594757e346ad2ec6cc5c83acac
   const addMovie = async (movie) => {
     await fetch(`${API_BASE}/movies`, {
       method: 'POST',
@@ -58,6 +72,7 @@ function App() {
     await fetch(`${API_BASE}/movies/${id}`, { method: 'DELETE' });
   };
 
+<<<<<<< HEAD
  const parseJwt = (token) => {
     try {
       return JSON.parse(atob(token.split('.')[1]));
@@ -93,6 +108,16 @@ function App() {
   useEffect(() => {
     if (user) fetchMovies();
   }, [user, fetchMovies]);
+=======
+  useEffect(() => {
+    if (user) fetchMovies();
+  }, [user]);
+
+  const fetchMovies = async () => {
+    const data = await getMovies();
+    setMovies(data);
+  };
+>>>>>>> 0620259aceb9f2594757e346ad2ec6cc5c83acac
 
   const resetForm = () => {
     setForm({ title: '', genre: '', release_year: '', notes: '', rating: 1 });
@@ -136,6 +161,10 @@ function App() {
     fetchMovies();
   };
 
+<<<<<<< HEAD
+=======
+  // New toggle favorite handler
+>>>>>>> 0620259aceb9f2594757e346ad2ec6cc5c83acac
   const handleToggleFavorite = async (movie) => {
     try {
       const updatedMovie = { ...movie, is_favorite: !movie.is_favorite };
@@ -445,7 +474,11 @@ function App() {
               onDelete={handleDelete}
               onToggleWatched={handleToggleWatched}
               onEdit={handleEditClick}
+<<<<<<< HEAD
               onToggleFavorite={handleToggleFavorite} 
+=======
+              onToggleFavorite={handleToggleFavorite}  // <-- new prop here
+>>>>>>> 0620259aceb9f2594757e346ad2ec6cc5c83acac
             />
           ))
         )}

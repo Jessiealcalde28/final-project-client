@@ -11,7 +11,11 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+<<<<<<< HEAD
     "react-scripts": "^5.0.1",
+=======
+    "react-scripts": "^3.0.1",
+>>>>>>> 0620259aceb9f2594757e346ad2ec6cc5c83acac
     "web-vitals": "^2.1.4"
   },
   "scripts": {
