@@ -1,4 +1,3 @@
-// App.js
 import React, { useEffect, useState, useCallback } from 'react';
 import MovieCard from './components/MovieCard';
 
@@ -137,7 +136,6 @@ function App() {
     fetchMovies();
   };
 
-  // New toggle favorite handler
   const handleToggleFavorite = async (movie) => {
     try {
       const updatedMovie = { ...movie, is_favorite: !movie.is_favorite };
@@ -447,7 +445,7 @@ function App() {
               onDelete={handleDelete}
               onToggleWatched={handleToggleWatched}
               onEdit={handleEditClick}
-              onToggleFavorite={handleToggleFavorite}  // <-- new prop here
+              onToggleFavorite={handleToggleFavorite} 
             />
           ))
         )}
